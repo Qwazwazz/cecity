@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgfr01uhrbte6"]
+[gd_scene load_steps=3 format=3 uid="uid://dgfr01uhrbte6"]
 
+[ext_resource type="Script" uid="uid://bcytotlp53fae" path="res://Scripts/Player/Player.gd" id="1_4x3mf"]
 [ext_resource type="Script" uid="uid://cyeekc7kbr8ao" path="res://Scripts/States/State Machine.gd" id="1_6sdeh"]
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_4x3mf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
