@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dcc51ynp13kx1"]
+[gd_scene load_steps=13 format=3 uid="uid://dcc51ynp13kx1"]
 
 [ext_resource type="Texture2D" uid="uid://ctxkt2cbyab7v" path="res://assets/BackGround.png" id="1_swcnr"]
 [ext_resource type="Texture2D" uid="uid://jveoay4jtdx2" path="res://assets/Tileset Ancient Forest.png" id="2_2lvr1"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://b4ugbijgo54qd" path="res://assets/NearTrees.png" id="5_4p605"]
 [ext_resource type="Texture2D" uid="uid://d1epvei4kiwlh" path="res://assets/FrontBushes.png" id="6_2racw"]
 [ext_resource type="Texture2D" uid="uid://c7batmu4heg5y" path="res://assets/ForeGround.png" id="7_0k0ig"]
+[ext_resource type="Script" uid="uid://bu7bcfn160mtn" path="res://character_body_2d.gd" id="8_4phwr"]
+[ext_resource type="Texture2D" uid="uid://dqxovlm5xnxka" path="res://icon.svg" id="9_6ol3t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pn4t7"]
 texture = ExtResource("2_2lvr1")
@@ -566,38 +568,74 @@ texture = ExtResource("2_2lvr1")
 [sub_resource type="TileSet" id="TileSet_lf5p6"]
 sources/0 = SubResource("TileSetAtlasSource_pn4t7")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4p605"]
+size = Vector2(129, 128)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Parallax background" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax background"]
+position = Vector2(590.50464, 317.77158)
+scale = Vector2(1.839077, 1.8287321)
 texture = ExtResource("1_swcnr")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_lf5p6")
 
 [node name="Parallax far trees" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.1, 0.1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax far trees"]
+position = Vector2(590.50464, 317.77158)
+scale = Vector2(1.839077, 1.8287321)
 texture = ExtResource("3_4phwr")
 
 [node name="Parallax middle trees" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.3, 0.3)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax middle trees"]
+position = Vector2(590.50464, 317.77158)
+scale = Vector2(1.839077, 1.8287321)
 texture = ExtResource("4_6ol3t")
 
 [node name="Parallax near trees" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax near trees"]
+position = Vector2(590.50464, 317.77158)
+scale = Vector2(1.839077, 1.8287321)
 texture = ExtResource("5_4p605")
 
 [node name="Parallax front bushes" type="Parallax2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax front bushes"]
+position = Vector2(590.50464, 317.77158)
+scale = Vector2(1.839077, 1.8287321)
 texture = ExtResource("6_2racw")
 
 [node name="Parallax foreground" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1.2, 1.2)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax foreground"]
+position = Vector2(590.50464, 317.77158)
+scale = Vector2(1.839077, 1.8287321)
 texture = ExtResource("7_0k0ig")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(589, 324)
+scale = Vector2(0.1772678, 0.19629344)
+script = ExtResource("8_4phwr")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(7.088257, 649.8574)
+scale = Vector2(-2.4458778, 2.416112)
+shape = SubResource("RectangleShape2D_4p605")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(7.588257, 649.8574)
+scale = Vector2(-2.4458778, 2.416112)
+texture = ExtResource("9_6ol3t")
