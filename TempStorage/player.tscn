@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgfr01uhrbte6"]
+[gd_scene load_steps=5 format=3 uid="uid://dgfr01uhrbte6"]
 
 [ext_resource type="Script" uid="uid://bcytotlp53fae" path="res://Scripts/Player/Player.gd" id="1_4x3mf"]
 [ext_resource type="Script" uid="uid://cyeekc7kbr8ao" path="res://Scripts/States/State Machine.gd" id="1_6sdeh"]
+[ext_resource type="Script" uid="uid://cqy6hbyck4ljn" path="res://Scripts/States/PlayerIdle.gd" id="3_npqbm"]
+[ext_resource type="Script" uid="uid://ctlq0mqxnpmig" path="res://Scripts/States/PlayerWalk.gd" id="4_ppbuq"]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_4x3mf")
@@ -14,3 +16,9 @@ script = ExtResource("1_4x3mf")
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("1_6sdeh")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("3_npqbm")
+
+[node name="Walk" type="Node" parent="StateMachine"]
+script = ExtResource("4_ppbuq")
