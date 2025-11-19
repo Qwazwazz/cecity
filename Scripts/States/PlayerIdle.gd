@@ -2,7 +2,7 @@ extends State
 class_name Idle
 
 func Enter():
-	state_machine.anim.play("idle")
+	state_machine.anim.play("Idle")
 
 func Physics_Update(delta):
 	var input_dir = Input.get_action_strength("ui_right") \

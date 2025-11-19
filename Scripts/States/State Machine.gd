@@ -7,11 +7,11 @@ var current_state : State
 var states : Dictionary = {}
 
 var player: Player
-var anim: AnimationPlayer
+var anim: AnimatedSprite2D
 
 func _ready():
 	player = get_parent() as Player
-	anim = player.get_node("AnimationPlayer")
+	anim = player.get_node("AnimatedSprite2D")
 	
 	# assign states by name
 	for child in get_children():

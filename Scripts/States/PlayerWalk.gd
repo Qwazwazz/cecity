@@ -2,7 +2,7 @@ extends State
 class_name Walk
 
 func Enter():
-	state_machine.anim.play("walk")
+	state_machine.anim.play("Run")
 
 func Physics_Update(delta):
 	var input_dir = Input.get_action_strength("ui_right") \
