@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://b48m1blbqoctp" path="res://skeleton/skeleton.png" id="1_crlql"]
 [ext_resource type="Script" uid="uid://cx021llreyv2l" path="res://Scripts/Player/skeleton.gd" id="1_plk42"]
-[ext_resource type="Script" uid="uid://drsg188f8jdbs" path="res://Scripts/unit_mover.gd" id="2_1xl8o"]
-[ext_resource type="Script" uid="uid://2brg6plt4hlq" path="res://Scripts/stats.gd" id="2_hd5up"]
+[ext_resource type="Script" uid="uid://ba6n60ecfnao3" path="res://Scripts/unit_mover.gd" id="2_1xl8o"]
+[ext_resource type="Script" uid="uid://8ybfhjc8hiwx" path="res://Scripts/stats.gd" id="2_hd5up"]
 [ext_resource type="Script" uid="uid://dgw8c2gffsb6t" path="res://damage_boxes/hurtbox.gd" id="3_xrf56"]
 [ext_resource type="Script" uid="uid://rwphv8v5rxdk" path="res://damage_boxes/hitbox.gd" id="4_uqgdn"]
 [ext_resource type="Script" uid="uid://bhru6gei8vjc4" path="res://skeleton/character_camera.gd" id="5_73gel"]
@@ -770,4 +770,3 @@ advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-bus = &"Sounds"

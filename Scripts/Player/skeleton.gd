@@ -17,12 +17,16 @@ const BONES_BURST_EFFECT = preload("res://effects/bones_burst_effect.tscn")
 var input_x: = 0.0
 var last_input_x: = 1.0
 
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
 func _ready() -> void:
 	stats.no_health.connect(die)
 	hurtbox.hurt.connect(_on_hurt.call_deferred)
 
 func _physics_process(delta: float) -> void:
 	var state: String = playback.get_current_node()
+	if not is_on_floor():
+		velocity.y += gravity * delta
 	match state:
 		"MoveState":
 			input_x = Input.get_axis("move_left", "move_right")
