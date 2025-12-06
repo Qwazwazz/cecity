@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://0othhtw3uxjm"]
+[gd_scene load_steps=11 format=4 uid="uid://0othhtw3uxjm"]
 
 [ext_resource type="Texture2D" uid="uid://jveoay4jtdx2" path="res://Environment/Parallax/Tileset Ancient Forest.png" id="1_qckh1"]
 [ext_resource type="Texture2D" uid="uid://ctxkt2cbyab7v" path="res://Environment/Parallax/BackGround.png" id="2_qqbwj"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b4ugbijgo54qd" path="res://Environment/Parallax/NearTrees.png" id="5_tnq5l"]
 [ext_resource type="Texture2D" uid="uid://d1epvei4kiwlh" path="res://Environment/Parallax/FrontBushes.png" id="6_gvvw3"]
 [ext_resource type="Texture2D" uid="uid://c7batmu4heg5y" path="res://Environment/Parallax/ForeGround.png" id="7_oayao"]
+[ext_resource type="PackedScene" uid="uid://dxaq80evuf3gd" path="res://skeleton/skeleton.tscn" id="8_qqbwj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pn4t7"]
 texture = ExtResource("1_qckh1")
@@ -703,6 +704,7 @@ position = Vector2(590.50464, 317.77158)
 texture = ExtResource("6_gvvw3")
 
 [node name="Foreground" type="Parallax2D" parent="Parallax"]
+visible = false
 z_index = 3
 scroll_scale = Vector2(0, 0)
 repeat_size = Vector2(640, 0)
@@ -714,3 +716,6 @@ texture = ExtResource("7_oayao")
 offset = Vector2(0, -17)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Skeleton" parent="." instance=ExtResource("8_qqbwj")]
+position = Vector2(392, 472)
